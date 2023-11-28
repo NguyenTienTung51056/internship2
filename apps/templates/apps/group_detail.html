@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ group.name }} Detail</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <h1>{{ group.name }} Detail</h1>
+    <h2>Members:</h2>
+    <ul>
+        {% for membership in group.membership_set.all %}
+            <li>{{ membership.person.name }} (Joined on {{ membership.date_joined }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
