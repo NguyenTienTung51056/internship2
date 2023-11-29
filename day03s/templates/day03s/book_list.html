@@ -1,0 +1,21 @@
+<!-- myapp/templates/book_list.html -->
+<h2>Books Published After 2020:</h2>
+<ul>
+    {% for book in books_published_after_2020 %}
+        <li>{{ book.title }} ({{ book.published_date }})</li>
+    {% endfor %}
+</ul>
+
+<h2>Authors with Book Count:</h2>
+<ul>
+    {% for author in authors_with_book_count %}
+        <li>{{ author.name }} ({{ author.book_count }} books)</li>
+    {% endfor %}
+</ul>
+
+<h2>Books by John Doe:</h2>
+<ul>
+    {% for book in books_by_john_doe %}
+        <li>{{ book.title }} ({{ book.published_date }})</li>
+    {% endfor %}
+</ul>
